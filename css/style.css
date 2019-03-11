@@ -1,0 +1,30 @@
+.trajet {
+  font-size: 250%;
+  font-weight: 900;
+  background-color: lightblue;
+}
+
+.listestations{
+  background-color: lightgrey;
+  font-size: 200%;
+}
+
+.temps{
+  font-size: 200%;
+}
+
+.container-fluid{
+  background-color: lightgrey;
+}
+
+.formu{
+  font-size: 150%;
+}
+
+.changement{
+  font-weight: 900;
+}
+
+.iconeligne{
+  width: 2%;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="//d2c5utp5fpfikz.cloudfront.net/3_1_1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//d2c5utp5fpfikz.cloudfront.net/3_1_1/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.js">
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".auto").keyup(function() {
+          var x = this;
+          var data = {};
+          data["query"] = x.value;
+          $.get("/dictionnary/search", data, function(result) {
+            document.getElementById("results").innerHTML = "<ul>";
+            for (var i = 0; i < result.length; i++) {
+              var toAdd = "<li><p class=\"completion\">"+result[i]+"</p></li>";
+              document.getElementById("results").innerHTML += toAdd;
+            }
+            $(document).ready(function () {
+              $(".completion").click(function() {
+                x.value = $(this).text();
+                document.getElementById("results").style.visibility = "hidden";
+              });
+            });
+            document.getElementById("results").innerHTML += "</ul>";
+            if (this.value != false) {
+              document.getElementById("results").style.visibility = "visible";
+            }
+          });
+        });
+      });
+    </script>
+    <title>Service de trajet de metro</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1> Bienvenue sur la page de <%= v_nom %> </h1>
+    </div>
+
+    <form class="formu" action="" method="post">
+      <p>
+        <input class="auto" id="dep" type="text" name="depart" value="Depart">
+        <div id="results" style="visibility: hidden">
+
+        </div>
+        <input class="auto" id="arr" type="text" name="arrivee" value="Arrivee">
+      </p>
+      <p>
+        Heure de départ :
+      </p>
+      <p>
+        <input type="number" min = "0" max = "23" name="hours" value="<%= heure%>"> H
+        <input type="number" min = "0" max = "59" name="minutes" value="<%= minutes%>">
+      </p>
+      <input type="submit" value="Rechercher">
+    </form>
+  </body>
+</html>
