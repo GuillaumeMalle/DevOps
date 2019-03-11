@@ -10,7 +10,7 @@ serv.set('view engine', 'ejs');
 serv.use(bodyParser.urlencoded({extended: false}));
 serv.use(express.static('css'));
 
-var donnees = fs.readFileSync('fichiers_dm_pw6/metro_graphe.edges', 'utf8');
+var donnees = fs.readFileSync('app/fichiers_dm_pw6/metro_graphe.edges', 'utf8');
 var tab = donnees.split("\n");
 
 var labels = lignes.labels;

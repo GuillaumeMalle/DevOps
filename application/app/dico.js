@@ -12,7 +12,7 @@ serv.use(bodyParser.json());
 serv.set('view engine', 'ejs');
 serv.use(express.static('css'));
 
-var liste_s = fs.readFileSync('fichiers_dm_pw6/metro_graphe.labels', 'utf8');
+var liste_s = fs.readFileSync('app/fichiers_dm_pw6/metro_graphe.labels', 'utf8');
 var liste = liste_s.split("\n");
 for (var i = 0; i < liste.length; i++) {
   liste[i] = liste[i].substring(liste[i].indexOf(" ")+1);

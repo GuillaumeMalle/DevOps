@@ -1,55 +1,55 @@
 var fs = require('fs');
 
-var ligne1_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne1.stations', 'utf8');
+var ligne1_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne1.stations', 'utf8');
 var ligne1 = ligne1_s.split("\n");
 
-var ligne2_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne2.stations', 'utf8');
+var ligne2_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne2.stations', 'utf8');
 var ligne2 = ligne2_s.split("\n");
 
-var ligne3_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne3.stations', 'utf8');
+var ligne3_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne3.stations', 'utf8');
 var ligne3 = ligne3_s.split("\n");
 
-var ligne3b_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne3b.stations', 'utf8');
+var ligne3b_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne3b.stations', 'utf8');
 var ligne3b = ligne3b_s.split("\n");
 
-var ligne4_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne4.stations', 'utf8');
+var ligne4_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne4.stations', 'utf8');
 var ligne4 = ligne4_s.split("\n");
 
-var ligne5_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne5.stations', 'utf8');
+var ligne5_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne5.stations', 'utf8');
 var ligne5 = ligne5_s.split("\n");
 
-var ligne6_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne6.stations', 'utf8');
+var ligne6_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne6.stations', 'utf8');
 var ligne6 = ligne6_s.split("\n");
 
-var ligne7_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne7.stations', 'utf8');
+var ligne7_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne7.stations', 'utf8');
 var ligne7 = ligne7_s.split("\n");
 
-var ligne7b_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne7b.stations', 'utf8');
+var ligne7b_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne7b.stations', 'utf8');
 var ligne7b = ligne7b_s.split("\n");
 
-var ligne8_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne8.stations', 'utf8');
+var ligne8_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne8.stations', 'utf8');
 var ligne8 = ligne8_s.split("\n");
 
-var ligne9_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne9.stations', 'utf8');
+var ligne9_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne9.stations', 'utf8');
 var ligne9 = ligne9_s.split("\n");
 
-var ligne10_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne10.stations', 'utf8');
+var ligne10_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne10.stations', 'utf8');
 var ligne10 = ligne10_s.split("\n");
 
-var ligne11_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne11.stations', 'utf8');
+var ligne11_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne11.stations', 'utf8');
 var ligne11 = ligne11_s.split("\n");
 
-var ligne12_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne12.stations', 'utf8');
+var ligne12_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne12.stations', 'utf8');
 var ligne12 = ligne12_s.split("\n");
 
-var ligne13_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne13.stations', 'utf8');
+var ligne13_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne13.stations', 'utf8');
 var ligne13 = ligne13_s.split("\n");
 
-var ligne14_s = fs.readFileSync('fichiers_dm_pw6/metro_ligne14.stations', 'utf8');
+var ligne14_s = fs.readFileSync('app/fichiers_dm_pw6/metro_ligne14.stations', 'utf8');
 var ligne14 = ligne14_s.split("\n");
 
 
-var labels_s = fs.readFileSync('fichiers_dm_pw6/metro_graphe.labels', 'utf8');
+var labels_s = fs.readFileSync('app/fichiers_dm_pw6/metro_graphe.labels', 'utf8');
 var temp = labels_s.split("\n");
 var labels = [];
 

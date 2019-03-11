@@ -1,3 +1,4 @@
+var dm = require('../app/DM');
 
 module.exports = (app, jsonParser) => {
     app.get('',function(req,res){
@@ -7,8 +8,8 @@ module.exports = (app, jsonParser) => {
         });
 
     app.post('',function(req, res){
-        var debut = getIdsbyName(req.body.depart);
-        var arrivee = getIdsbyName(req.body.arrivee);
+        var debut = dm.getIdsbyName(req.body.depart);
+        var arrivee = dm.getIdsbyName(req.body.arrivee);
         var d = new Date();
         if(debut.length == 0 || arrivee.length == 0){
             res.render('pageerror.ejs', {v_nom : 'Service de chemin de Metro', heure : d.getHours(), minutes : d.getMinutes()});
@@ -17,7 +18,7 @@ module.exports = (app, jsonParser) => {
             var tailleCheminMin = 20000;
             for (var i = 0; i < debut.length; i++) {
             for (var j = 0; j < arrivee.length; j++) {
-                Dijkstra(debut[i]);
+                dm.Dijkstra(debut[i]);
                 var chemin = getPath(debut[i], arrivee[j]);
                 if(chemin.length < tailleCheminMin){
                 cheminMin = chemin;
@@ -25,7 +26,7 @@ module.exports = (app, jsonParser) => {
                 }
             }
             }
-            var temps = getTravelTime(cheminMin);
+            var temps = dm.getTravelTime(cheminMin);
             var hdep = req.body.hours;
             var mdep = req.body.minutes;
             var sec  = temps%60;
