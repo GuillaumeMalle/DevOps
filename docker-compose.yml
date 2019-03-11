@@ -1,0 +1,34 @@
+# Our first entry is nginx. Nginx is here to manage our connection flow (Reverse Proxy)
+nginx:
+# We build it from the Dockerfile within the "mynginx" folder
+  build: ./mynginx
+
+# We specify this container to restart in case of crash
+  restart: always
+
+# We first need the container "node" to be up and linked in order to use our Nginx
+  links:
+    - node
+
+# We specify the name of our container
+  container_name: nginx_1
+
+# We specify the port we are using inside our docker network and also outside
+# If we would like our application to be used under https, # we would also open the port 443 and manage it under our "nginx.conf" file.
+  ports:
+    - "80:80"
+
+# Our second entry is node. Node is our main application
+node:
+# We build it from the Dockerfile within the "myplatform" folder
+  build: ./application
+
+# We specify this container to restart in case of crash
+  restart: always
+
+# We specify the name of our container
+  container_name: node_1
+
+# We specify the port we are using inside our docker network
+  ports:
+    - "8080"
