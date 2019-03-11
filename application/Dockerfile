@@ -17,7 +17,7 @@ COPY package.json /user/src/app/
 
 # We install our dependencies
 RUN npm install
-RUN npm install ejs -g
+RUN npm install ejs
 
 # Security reason
 RUN npm i npm@latest
