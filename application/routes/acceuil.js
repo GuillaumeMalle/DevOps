@@ -8,8 +8,12 @@ module.exports = (app, jsonParser) => {
         });
 
     app.post('',function(req, res){
+        console.log(req.body.depart);
         var debut = dm.getIdsbyName(req.body.depart);
+        console.log(debut);
+        console.log(req.body.arrivee);
         var arrivee = dm.getIdsbyName(req.body.arrivee);
+        console.log(arrivee);
         var d = new Date();
         if(debut.length == 0 || arrivee.length == 0){
             res.render('pageerror.ejs', {v_nom : 'Service de chemin de Metro', heure : d.getHours(), minutes : d.getMinutes()});
@@ -19,7 +23,7 @@ module.exports = (app, jsonParser) => {
             for (var i = 0; i < debut.length; i++) {
             for (var j = 0; j < arrivee.length; j++) {
                 dm.Dijkstra(debut[i]);
-                var chemin = getPath(debut[i], arrivee[j]);
+                var chemin = dm.getPath(debut[i], arrivee[j]);
                 if(chemin.length < tailleCheminMin){
                 cheminMin = chemin;
                 tailleCheminMin = chemin.length;

@@ -22,6 +22,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./routes/_')(app, jsonParser);
+// require('./routes/acceuil')(app, jsonParser);
 
 const server_http = http.createServer(app);
 server_http.listen(port, (err) => {

@@ -71,13 +71,20 @@ if (dist[s2] > dist[s1] + Poids(s1,s2)) {
 }
 
 function getIdsbyName(name){
-var ids = [];
-for (var i = 0; i < labels.length; i++) {
-  if(labels[i][0]== name) {
-    ids.push(i);
+  var ids = [];
+  console.log(name);
+  for (var i = 0; i < labels.length; i++) {
+    // console.log(labels[i][0]);
+    // if(labels[i][0].includes("Oberkampf")) {
+    //   console.log("c'est oberkampf dans le dico");
+    // }
+    if(labels[i][0].includes(name)) {
+      console.log("c'est egal");
+      ids.push(i);
+    }
   }
-}
-return ids;
+  console.log(ids);
+  return ids;
 }
 
 function Dijkstra(depart){
@@ -141,6 +148,10 @@ if((query.length > 0)){
 }
 return results;
 }
+
+module.exports = {getIdsbyName : getIdsbyName, prefixSearch : prefixSearch, insert : insert, getTravelTime : getTravelTime
+                  , getPath : getPath, Dijkstra : Dijkstra, majDist : majDist, Poids : Poids, findMini : findMini, InitDist : InitDist
+                  , InitGraph : InitGraph};
 
 // serv.get('',function(req,res){
 // var chemin = [];

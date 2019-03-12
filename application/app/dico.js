@@ -31,7 +31,7 @@ function newDico(array) {
 }
 
 var ledico = newDico(liste);
-exports.ledico = ledico;
+// exports.ledico = ledico;
 
 function search(dico, word) {
   for (var i = 0; i < dico.length; i++) {
@@ -62,6 +62,8 @@ function prefixSearch(dico, query, maxResults) {
   }
   return results;
 }
+
+module.exports = {prefixSearch : prefixSearch, ledico : ledico}; 
 
 
 /*serv.post('/dictionnary', function(req, res) {
