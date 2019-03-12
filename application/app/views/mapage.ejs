@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link href="//d2c5utp5fpfikz.cloudfront.net/3_1_1/css/bootstrap.min.css" rel="stylesheet">
     <link href="//d2c5utp5fpfikz.cloudfront.net/3_1_1/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.1.js">
     </script>
     <script>
@@ -71,7 +71,7 @@
             <% var i;
             for (i in station){ %>
               <% if(i == 0){ %>
-                <li> Prendre la ligne <img class= "iconeligne" src="/icones/ico_l<%=station[i][1] %>.png"> à <%= station[i][0] %> </li>
+                <li> Prendre la ligne <img class= "iconeligne" src="../css/icones/ico_l<%=station[i][1] %>.png"> à <%= station[i][0] %> </li>
               <% } else if (station[i-1][1] != station[i][1]) { %>
                 <li class="changement"> Changer à <%= station[i][0] %>, prendre la ligne <img class= "iconeligne" src="/icones/ico_l<%=station[i][1] %>.png"> </li>
               <% } else {%>
