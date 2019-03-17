@@ -13,6 +13,9 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const port = 8080;
 
+const Sentry = require('@sentry/node');
+Sentry.init({ dsn: 'https://179764c03b0b49a3ab38cae00b242618@sentry.io/1417295' });
+
 app.disable('x-powered-by');
 
 app.use(express.static(rootDir));

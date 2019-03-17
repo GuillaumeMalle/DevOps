@@ -18,6 +18,7 @@ COPY package.json /user/src/app/
 # We install our dependencies
 RUN npm install
 RUN npm install ejs
+RUN npm install @sentry/node@4.6.4
 
 # Security reason
 RUN npm i npm@latest
